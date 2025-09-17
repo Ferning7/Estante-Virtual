@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const bookCards = Array.from(document.querySelectorAll('.book-card'));
@@ -17,3 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+// cria o card em js 
+
+// verifica se é admin
+// se for, mostra botoes de delete e edit
+

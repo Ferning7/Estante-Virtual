@@ -23,29 +23,12 @@ h2 {
   color: white;
 }
 
-
-header nav ul {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-ul li {
-  align-items: center;
-  list-style: none;
-}
-
-ul a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-
 .logout-btn {
   background-color: #007bff;
   padding: 10px 25px;
   color: white;
   border-radius: 6px;
+  border: none;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
@@ -149,3 +132,4 @@ ul a {
     text-align: center;
   }
 }
+

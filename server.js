@@ -70,7 +70,7 @@ server.post('/cadastrar', async (req, res) => {
         if (rows.length > 0) {
             return res.redirect('/cadastro.html?error=email_existente')
         } else {
-            await conexaoBanco.query('INSERT INTO usuarios (nome, email, senha) values (?, ?, ?)', [nome, email, senhaHash])
+            await conexaoBanco.query('INSERT INTO usuarios (nome, email, senha, usuario) values (?, ?, ?, ?)', [nome, email, senhaHash])
             res.redirect('/login.html')
         }
 
@@ -119,7 +119,8 @@ server.get('/logout', (req, res) => {
             console.error('Erro ao fazer logout: ', error)
             return res.status(500).send('Não foi possível fazer logout.')
         } else {
-            next()
+            res.clearCookie('connect.sid')
+            res.redirect('/login.html')
         }
     })
 })
