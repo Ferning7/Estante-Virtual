@@ -21,8 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// cria o card em js 
 
-// verifica se é admin
-// se for, mostra botoes de delete e edit
 
