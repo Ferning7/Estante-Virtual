@@ -134,6 +134,10 @@ server.get('/logout', (req, res) => {
     });
 });
 
+server.post('/exemplares', async (req, res) => {
+    const {titulo, autor, editora, ano_publicacao, genero, sinopse, capa_url}
+})
+
 server.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`);
 });
