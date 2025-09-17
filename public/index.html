@@ -1,72 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Estante Virtual</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header>
-    <div class="apresentacao">
+    <section class="apresentacao">
       <h2>Estante Virtual</h2>
-    </div>
-    <nav class="navBar">
-      <span id="usuarioInfo">...</span>
-      <a href="/logout" class="logout-btn">Sair</a>
-    </nav>
+    </section>
+    <nav class="navBar"> <a href="/logout" class="logout-btn">Sair</a> </nav>
   </header>
-
   <main class="container">
-    <section class="controls">
-      <input id="searchInput" type="text" placeholder="Procure por livros..." />
-      <button id="btnNovo" class="hidden">Cadastrar novo exemplar</button>
+    <section class="search-section"> <input type="text" placeholder="Procure por livros..." id="searchInput" />
     </section>
-
-    <section id="booksGrid" class="books-grid">
-      <!-- cards serão inseridos dinamicamente -->
+    <section class="books-grid">
+      <article class="book-card"> <img src="https://m.media-amazon.com/images/I/61Z2bMhGicL._SY466_.jpg"
+          alt="Capa Dom Casmurro" />
+        <h3>Dom Casmurro</h3>
+        <p>Machado de Assis</p>
+      </article>
+      <article class="book-card"> <img src="https://m.media-amazon.com/images/I/71SiU2yb8YL._SY425_.jpg"
+          alt="Capa O Pequeno Príncipe" />
+        <h3>O Pequeno Príncipe</h3>
+        <p>Antoine de Saint-Exupéry</p>
+      </article>
+      <article class="book-card"> <img src="https://images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg"
+          alt="Capa 1984" />
+        <h3>1984</h3>
+        <p>George Orwell</p>
+      </article>
+      <article class="book-card"> <img src="https://m.media-amazon.com/images/I/817esPahlrL._SY466_.jpg"
+          alt="Capa Cem Anos de Solidão" />
+        <h3>Cem Anos de Solidão</h3>
+        <p>Gabriel García Márquez</p>
+      </article>
+      <article class="book-card"> <img src="https://images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg"
+          alt="Capa Sapiens" />
+        <h3>Sapiens</h3>
+        <p>Yuval Noah Harari</p>
+      </article>
     </section>
-
-    <p id="noResults" class="hidden">Nenhum exemplar encontrado.</p>
   </main>
-
-  <!-- Modal de detalhes -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <button id="closeModal" class="close">×</button>
-      <img id="modalCapa" src="" alt="Capa" />
-      <h3 id="modalTitulo"></h3>
-      <p><strong>Autor:</strong> <span id="modalAutor"></span></p>
-      <p><strong>Editora:</strong> <span id="modalEditora"></span></p>
-      <p><strong>Ano:</strong> <span id="modalAno"></span></p>
-      <p><strong>Gênero:</strong> <span id="modalGenero"></span></p>
-      <p id="modalSinopse"></p>
-
-      <div id="adminButtons" class="admin-buttons hidden">
-        <button id="editarBtn">Editar</button>
-        <button id="excluirBtn">Excluir</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Form de criação/edição (aparece para admin) -->
-  <div id="formModal" class="modal hidden">
-    <div class="modal-content">
-      <button id="closeForm" class="close">×</button>
-      <h3 id="formTitle">Cadastrar exemplar</h3>
-      <form id="exemplarForm">
-        <input name="titulo" placeholder="Título" required />
-        <input name="autor" placeholder="Autor" required />
-        <input name="editora" placeholder="Editora" required />
-        <input name="ano_publicacao" placeholder="Ano (YYYY)" required pattern="\d{4}" />
-        <input name="genero" placeholder="Gênero" required />
-        <input name="capa_url" placeholder="URL da capa" required />
-        <textarea name="sinopse" placeholder="Sinopse" required></textarea>
-        <button type="submit">Salvar</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
+<script src="script.js"></script>
+
 </html>
